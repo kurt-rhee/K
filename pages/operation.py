@@ -11,7 +11,7 @@ def build_operation_page():
     ss = SankeySoftware()
     sd = SankeyDomain()
 
-    st.write('## Operational Data ETL')
+    st.write('## Operational Data ETL & Dashboard')
     st.write("""
     ### Introduction
     Before the analytics group was established 1/1/2021 there was no established feedback loop from

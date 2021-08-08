@@ -15,7 +15,9 @@ def build_about_page():
     
     Sankey diagrams located on each page throughout this portfolio display core competencies and libraries that I
     have actively used to create some body of work.  On each project page, the edges highlighted in green show which
-    competencies I used on that specific project. 
+    competencies I used on that specific project. If you are viewing this page on a small laptop screen, all of the
+    parts of the sankey diagrams may not appear.  Please feel free to resize the browser or expand the diagrams to full
+    size via the expand button located at the top right of each diagram
     
     Outside of my main body of work, I am a part time stunt man, surfer, rock climber, environmentalist and bibliophile.
     
