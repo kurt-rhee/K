@@ -34,7 +34,7 @@ def main():
     navigation = build_sidebar()
 
     # --- build pages
-    if navigation['page'] == 'Home':
+    if navigation['page'] == 'Index':
         build_front_page()
     elif navigation['page'] == 'About Me':
         build_about_page()

@@ -22,7 +22,7 @@ def build_sidebar():
 
     # --- Get Active Navigation ---
     page_list = [
-        'Home', 'About Me',
+        'About Me', 'Index',
         'Operational Data ETL',
         'Energy Production Estimation',
         'Solar Layout Generator',
