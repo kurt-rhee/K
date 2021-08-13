@@ -140,21 +140,26 @@ def employment_history():
     today = datetime.today().strftime('%Y-%m-%d')
 
     df = pd.DataFrame([
-        dict(Task="PV Designer", Start='2015-07-01', Finish='2015-10-01', Resource="Sunrun"),
-        dict(Task="Sr. PV Designer", Start='2015-10-01', Finish='2016-03-01', Resource="Sunrun"),
-        dict(Task="Supervisor PV Design", Start='2016-03-01', Finish='2016-09-01', Resource="Sunrun"),
+        dict(Task="PV Design", Start='2015-07-01', Finish='2015-10-01', Resource="Sunrun"),
+        dict(Task="Sr.PV Design", Start='2015-10-01', Finish='2016-03-01', Resource="Sunrun"),
+        dict(Task="Supervisor PV Design", Start='2016-03-01', Finish='2016-09-01', Resource="Sunrun", Color='#14a2d9'),
         dict(Task="Solar Engineer", Start='2016-10-01', Finish='2020-03-01', Resource="EDFR"),
-        dict(Task="Senior R&D Engineer", Start='2020-03-01', Finish='2020-12-01', Resource="EDFR"),
-        dict(Task="Manager Engineering Analytics", Start='2020-12-01', Finish=today, Resource="EDFR"),
+        dict(Task="Senior R&D Engineer", Start='2020-03-01', Finish='2020-12-01', Resource="EDFR", Color='#e24d13'),
+        dict(Task="Manager Analytics", Start='2020-12-01', Finish='2021-09-01', Resource="EDFR"),
+        dict(Task="Software Engineer", Start='2021-09-01', Finish=today, Resource="Nevados", Color='pink')
     ])
+    color_map = {
+        'Sunrun': '#14a2d9',
+        'EDFR': '#272f6a',
+        'Nevados': '#f26543'
+    }
     fig = px.timeline(
         df,
-        x_start="Start", x_end="Finish",
-        y="Resource", color="Resource",
+        x_start="Start", x_end="Finish", y="Resource",
+        color="Resource", color_discrete_map=color_map,
+        text='Task'
         )
-
-    fig = px.timeline(df, x_start="Start", x_end="Finish", y="Task", text='Task')  #
-    fig.update_traces(textposition='outside')
+    fig.update_traces(textposition='inside')
 
     fig.update_layout(
         title="Employment History",
