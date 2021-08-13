@@ -142,11 +142,11 @@ def employment_history():
     df = pd.DataFrame([
         dict(Task="PV Design", Start='2015-07-01', Finish='2015-10-01', Resource="Sunrun"),
         dict(Task="Sr.PV Design", Start='2015-10-01', Finish='2016-03-01', Resource="Sunrun"),
-        dict(Task="Supervisor PV Design", Start='2016-03-01', Finish='2016-09-01', Resource="Sunrun", Color='#14a2d9'),
+        dict(Task="Supervisor PV Design", Start='2016-03-01', Finish='2016-09-01', Resource="Sunrun"),
         dict(Task="Solar Engineer", Start='2016-10-01', Finish='2020-03-01', Resource="EDFR"),
-        dict(Task="Senior R&D Engineer", Start='2020-03-01', Finish='2020-12-01', Resource="EDFR", Color='#e24d13'),
+        dict(Task="Senior R&D Engineer", Start='2020-03-01', Finish='2020-12-01', Resource="EDFR"),
         dict(Task="Manager Analytics", Start='2020-12-01', Finish='2021-09-01', Resource="EDFR"),
-        dict(Task="Software Engineer", Start='2021-09-01', Finish=today, Resource="Nevados", Color='pink')
+        dict(Task="Software Engineer", Start='2021-09-01', Finish=today, Resource="Nevados")
     ])
     color_map = {
         'Sunrun': '#14a2d9',
