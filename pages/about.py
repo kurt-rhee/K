@@ -41,7 +41,7 @@ def build_about_page():
         'Locations': ['San Diego County, CA', 'Remote'],
         'Education': ['B.Sc. NanoEngineering from UCSD', 'Minor in Literature from UCSD'],
         'Contact': [
-            'kurtrhee@gmail',
+            'kurtrhee@gmail.com',
             r'https://www.linkedin.com/in/simonkurtisrhee/',
             r'https://www.imdb.com/name/nm5560420/?ref_=fn_al_nm_7']
     }
