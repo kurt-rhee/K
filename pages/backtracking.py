@@ -49,7 +49,7 @@ def build_raytracing_page():
     st.write('## Figures')
     st.write('___')
     st.write('#')
-    st.image(r'diagrams/trackers.gif')
+    st.image(r'diagrams/raytracing.png')
     st.write('#')
 
     return
