@@ -17,16 +17,16 @@ class SankeySoftware:
 
             # Categories
             "Front End", "Data Viz", "API",
-            "Numerical", "Domain", "Orchestration", "Storage", 'Version Control',
+            "Numerical", "Domain", "ETL", "Storage", 'Ops',
 
             'Streamlit', 'Jupyter', 'Dash', 'HTML',     # Front End
             'Plotly', 'Matplotlib', 'Bokeh',            # Data Viz
-            'Flask',                                    # API
+            'Flask', 'FastAPI',                         # API
             'Pandas', 'Numpy', 'Sci-Kit', 'Dask',       # Numerical
             'Pvlib', 'NetworkX', 'GeoPandas',           # Domain
-            'Prefect',                                  # Orchestration
+            'Prefect',                                  # ETL
             'Parquet', 'SQL',                           # Storage
-            'Github'                                    # Version Control
+            'Docker', 'AWS ECR', 'AWS ECS'              # Operations
         ]
 
         # --- colors ---
@@ -36,15 +36,15 @@ class SankeySoftware:
         # Where the edges should start
         self.sources = [
             0,
-            0, 0, 0, 0, 0, 0, 0, 0,
-            1, 1, 1, 1,
-            2, 2, 2,
-            3,
-            4, 4, 4, 4,
-            5, 5, 5,
-            6,
-            7, 7,
-            8
+            0, 0, 0, 0, 0, 0, 0, 0,                     # Categories
+            1, 1, 1, 1,                                 # Front End
+            2, 2, 2,                                    # Data Viz
+            3, 3,                                       # API
+            4, 4, 4, 4,                                 # Numerical
+            5, 5, 5,                                    # Domain
+            6,                                          # ETL
+            7, 7,                                       # Storage
+            8, 8, 8                                     # Operations
         ]
 
         # --- targets ---
@@ -54,8 +54,15 @@ class SankeySoftware:
         # --- values ---
         # Width of the pipes to each node
         self.values = [
-            0,
-            4, 3, 1, 4, 3, 1, 2, 1,
+            0,  # Categories
+            4,  # Front End
+            3,  # Data Viz
+            1,  # API
+            4,  # Numerical
+            3,  # Domain
+            1,  # ETL
+            2,  # Storage
+            3,  # Operations
         ]
         self.values.extend([1 for x in range(0, len(self.targets) - len(self.values))])
 
@@ -73,12 +80,12 @@ class SankeyDomain:
             'Solar Performance', 'C.A.D.', 'Statistics', 'Math',
             'Machine Learning', 'Projects',
 
-            'PVSyst', 'Plant Predict', 'SAM',   # Solar Performance Modeling
-            'AutoCAD', 'Solidworks',            # CAD
+            'PVSyst', 'Plant Predict', 'SAM',                                               # Solar Performance Modeling
+            'AutoCAD', 'Solidworks',                                                                # CAD
             'Error Metrics', 'Monte Carlo', 'Kolmogorov-Smirnov', 'Kernel Density Estimates',       # Stats
-            'Graph Theory',                                                                         # Math
+            'Graph Theory', 'Ray Tracing',                                                          # Math
             'Regression', 'K-Means Clustering', 'Spectral Clustering', 'Hierarchical Clustering',   # ML
-            'Test Facilities', 'Utility Scale Projects', 'Residential Scale Projects'     # Projects
+            'Test Facilities', 'Utility Scale Projects', 'Residential Scale Projects'               # Projects
         ]
 
         # --- colors ---
@@ -88,13 +95,13 @@ class SankeyDomain:
         # Where the edges should start
         self.sources = [
             0,
-            0, 0, 0, 0, 0, 0,
-            1, 1, 1,
-            2, 2,
-            3, 3, 3, 3,
-            4,
-            5, 5, 5, 5,
-            6, 6, 6
+            0, 0, 0, 0, 0, 0,   # Categories
+            1, 1, 1,            # Solar Performance Modeling
+            2, 2,               # CAD
+            3, 3, 3, 3,         # Stats
+            4, 4,               # Math
+            5, 5, 5, 5,         # ML
+            6, 6, 6             # Projects
         ]
 
         # --- targets ---
@@ -105,7 +112,12 @@ class SankeyDomain:
         # Width of the pipes to each node
         self.values = [
             0,
-            3, 2, 4, 1, 4, 3
+            3,  # Solar Performance Modeling
+            2,  # CAD
+            4,  # Stats
+            1,  # Math
+            4,  # ML
+            3   # Projects
         ]
         self.values.extend([1 for x in range(0, len(self.targets) - len(self.values))])
 

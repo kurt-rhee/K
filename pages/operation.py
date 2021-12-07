@@ -39,7 +39,7 @@ def build_operation_page():
     # --- left column ---
     c1.write('## Software Engineering')
     used = ['Front End', 'Data Viz', 'Numerical', 'Domain', 'Orchestration', 'Storage', 'Version Control',
-            'Streamlit', 'Plotly', 'Pvlib', 'Pandas', 'Prefect', 'Parquet', 'Github']
+            'Streamlit', 'Plotly', 'Pvlib', 'Pandas', 'Prefect', 'Parquet']
     pos = [ss.labels.index(x) for x in ss.labels if x in used]
     for x in pos:
         ss.color_link[x] = '#9dd498'

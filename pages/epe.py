@@ -39,7 +39,7 @@ def build_epe_page():
     # --- left column ---
     c1.write('## Software Engineering')
     used = ['Front End', 'Data Viz', 'Numerical', 'Domain', 'Storage', 'Version Control',
-            'Streamlit', 'Plotly', 'Bokeh', 'Pvlib', 'Pandas', 'SQL', 'Github']
+            'Streamlit', 'Plotly', 'Bokeh', 'Pvlib', 'Pandas', 'SQL']
     pos = [ss.labels.index(x) for x in ss.labels if x in used]
     for x in pos:
         ss.color_link[x] = '#9dd498'

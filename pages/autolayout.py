@@ -71,7 +71,7 @@ def build_autolayout_page():
     # --- left column ---
     c1.write('## Software Engineering')
     used = ['Front End', 'Data Viz', 'Numerical', 'Domain', 'Storage', 'Version Control',
-            'Streamlit', 'Plotly', 'Pandas', 'Numpy', 'Sci-Kit', 'NetworkX', 'GeoPandas', 'SQL', 'Github']
+            'Streamlit', 'Plotly', 'Pandas', 'Numpy', 'Sci-Kit', 'NetworkX', 'GeoPandas', 'SQL']
     pos = [ss.labels.index(x) for x in ss.labels if x in used]
     for x in pos:
         ss.color_link[x] = '#9dd498'
