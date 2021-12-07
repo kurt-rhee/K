@@ -28,6 +28,7 @@ def build_sidebar():
         'Solar Layout Generator',
         'Non-Gaussian Uncertainty',
         'Non-Linear Satellite Correlation',
+        'Ray Tracing',
         'Test Facilities',
         'Utility Scale Projects',
         'Residential Scale Projects',

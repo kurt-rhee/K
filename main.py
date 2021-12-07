@@ -12,6 +12,7 @@ from pages.epe import build_epe_page
 from pages.autolayout import build_autolayout_page
 from pages.kde import build_kde_page
 from pages.ksi import build_ksi_page
+from pages.backtracking import build_raytracing_page
 from pages.tf import build_tf_page
 from pages.usp import build_usp_page
 from pages.rsp import build_rsp_page
@@ -48,6 +49,8 @@ def main():
         build_kde_page()
     elif navigation['page'] == 'Non-Linear Satellite Correlation':
         build_ksi_page()
+    elif navigation['page'] == 'Ray Tracing':
+        build_raytracing_page()
     elif navigation['page'] == 'Test Facilities':
         build_tf_page()
     elif navigation['page'] == 'Utility Scale Projects':

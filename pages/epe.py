@@ -2,8 +2,6 @@ import streamlit as st
 from diagrams import SankeySoftware, SankeyDomain, make_plot
 
 
-
-
 def build_epe_page():
     """
     """
@@ -13,25 +11,15 @@ def build_epe_page():
 
     st.write('## Energy Production Estimate Workflow')
     st.write("""
-        ### Introduction
-        The Solar Engineering Group at EDFR and at many other companies faces a large constraint which forces them to use PVSyst in their energy production estimate reports. This is due to the fact that large financing bodies have a longstanding familiarity with PVSyst and often do not want to use reports from other vendors. Legacy tools at the company to pre and post-process data into and out of PVsyst were all created in separate excel tools. In order to complete a full energy estimate, solar engineers needed to open up at least 3 different instances of excel and switch back and forth between them to gather the correct information.
-        
-        ### Methodology
-        Streamlining this process meant combining many excel tools into just one, to serve as a front end for python code which runs on a remote server, introducing batch processing functionalities and the ability to create deliverable files for the newly formed storage team. These new deliverables not created in the original tool include energy for storage optimization at the battery terminals and energy shifting results.
-        
-        The tool begins with an excel based interface which simplifies the design of a grid scale PV plant. This design is then carried over to an interstitial page which allows the user to automatically create batch files for PVSyst, or test buildable land areas to see if they fit the desired design. Once these intermediate calculations are done, the user runs PVsyst and clicks "Run EPE" on the excel interface.
-        
-        Once the "Run EPE" button is clicked, a python script on a remote server post-processes all of the PVSyst losses, adding a few calculations and combines all of the resulting data into a deliverable template ready to be consumed by the end user.
+        ### Description
+        Automation of EDF's PVSyst workflow
         
         ### Results
-        The end result of all of this automation is approximately 25 minutes per use of the tool. With the team at its current size, the tool gives the following financial benefits:
         
         * 639.45% ROI
         * $433,817 NPV with a 5% discount rate over 5 years
         * $103,956 Yearly Saved Cost
-        
-        These benefits are expected to grow as more people are added to the solar and storage engineering teams and more possible solar projects are examined.
-    """)
+            """)
 
     # --- header ---
     c1, c2 = st.columns([1, 1])

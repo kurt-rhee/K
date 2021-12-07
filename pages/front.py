@@ -20,7 +20,7 @@ def build_front_page():
     c2.write('## Solar Performance Modeling')
     automation_key = pd.DataFrame({
         'Project': [
-            'Operational Data ETl',
+            'Operational Data ETL',
             'Energy Prediction Workflow'
             ],
         'Description': [
@@ -36,12 +36,14 @@ def build_front_page():
         'Project': [
             'Layout Generation',
             'Non-Gaussian Uncertainty',
-            'Non-Linear Satellite Correlation'
+            'Non-Linear Satellite Correlation',
+            'Terrain Aware Backtracking via Forward Ray Tracing'
             ],
         'Description': [
             'Automatic utility scale solar layout generation via graph theory and clustering',
             'Solar performance uncertainty via Kernel Density Estimate',
-            'Ground vs. satellite correlation via Kolmogorov Smirnoff Index fit'
+            'Ground vs. satellite correlation via Kolmogorov Smirnoff Index fit',
+            'Novel backtracking strategy scaled in AWS via forward ray tracing'
             ]
     })
     data_science_key.set_index('Project', inplace=True, drop=True)

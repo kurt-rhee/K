@@ -13,23 +13,14 @@ def build_operation_page():
 
     st.write('## Operational Data ETL & Dashboard')
     st.write("""
-    ### Introduction
-    Before the analytics group was established 1/1/2021 there was no established feedback loop from
-    EDF owned and operated solar and storage plants to the models used to develop them.  The purpose
-    of the new group was to use the large streams of data coming from the EDF fleet to inform the 
-    modeling of new development assets. 
-    
-    ### Methodology
-    In order to create a feedback loop from operating power plant data to the performance models used to
-    estimate their profitability, I first created a python library entitled "botany," meaning the study 
-    of [power] plants in order to standardize data reading, timezone localization, data cleaning and ingestion.
-    I then created a set of ETL operations organized as directed acyclic graphs within botany
-    and orchestrated by Prefect on a remote server to automatically and reproducibly transform data into usable KPI's.  
+    ### Description
+    Python data science / data analysis / data engineering library for converting raw data in AWS S3 to usable  
+    insights for the solar performance modeling team.
     
     
     ### Result
     The feedback loop operates across EDF's fleet of utility scale solar power plants and removes the need
-    to import, clean and track operational data against the original budget.  This saves time, 
+    to import, clean, analyze and track operational data against the original budget.  This saves time, 
     generates consistency and greatly reduces the likelihood of errors in analysis.
     """)
 

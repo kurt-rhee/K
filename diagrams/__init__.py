@@ -3,6 +3,8 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 from datetime import datetime
+import streamlit as st
+
 
 class SankeySoftware:
     """
@@ -12,58 +14,45 @@ class SankeySoftware:
     def __init__(self):
 
         # --- labels ---
-        self.labels = [
-            "Software",
+        main_type = ["Software"]
+        categories = ["Front End", "Data Viz", "API", "Numerical", "Domain", "ETL", "Storage", 'Ops']
+        front_end = ['Streamlit', 'Jupyter', 'Dash', 'HTML']
+        data_viz = ['Plotly', 'Matplotlib', 'Bokeh']
+        api = ['Flask', 'FastAPI']
+        numerical = ['Pandas', 'Numpy', 'Sci-Kit', 'Dask']
+        domain = ['Pvlib', 'NetworkX', 'GeoPandas']
+        etl = ['Prefect']
+        storage = ['Parquet', 'SQL']
+        ops = ['Docker', 'AWS']
 
-            # Categories
-            "Front End", "Data Viz", "API",
-            "Numerical", "Domain", "ETL", "Storage", 'Ops',
+        self.labels = []
+        self.sources = []
+        self.values = []
+        label_types = [main_type, categories, front_end, data_viz, api, numerical, domain, etl, storage, ops]
+        for i, label_list in enumerate(label_types):
 
-            'Streamlit', 'Jupyter', 'Dash', 'HTML',     # Front End
-            'Plotly', 'Matplotlib', 'Bokeh',            # Data Viz
-            'Flask', 'FastAPI',                         # API
-            'Pandas', 'Numpy', 'Sci-Kit', 'Dask',       # Numerical
-            'Pvlib', 'NetworkX', 'GeoPandas',           # Domain
-            'Prefect',                                  # ETL
-            'Parquet', 'SQL',                           # Storage
-            'Docker', 'AWS ECR', 'AWS ECS'              # Operations
-        ]
+            # add to labels list
+            self.labels.extend(label_list)
+
+            # choose sources for edge in sankey graph
+            j = i - 1 if i >= 2 else 0
+            self.sources.extend([j for x in range(0, len(label_list))])
+
+            # choose width of pipe in each node in category
+            if i == 1:
+                self.values.append(0)
+            elif i >= 2:
+                self.values.append(len(label_list))
 
         # --- colors ---
         self.color_link = ['#CCCCCC' for x in self.labels]
-
-        # --- sources ---
-        # Where the edges should start
-        self.sources = [
-            0,
-            0, 0, 0, 0, 0, 0, 0, 0,                     # Categories
-            1, 1, 1, 1,                                 # Front End
-            2, 2, 2,                                    # Data Viz
-            3, 3,                                       # API
-            4, 4, 4, 4,                                 # Numerical
-            5, 5, 5,                                    # Domain
-            6,                                          # ETL
-            7, 7,                                       # Storage
-            8, 8, 8                                     # Operations
-        ]
 
         # --- targets ---
         # Where the edges should go
         self.targets = list(range(0, len(self.sources)))
 
         # --- values ---
-        # Width of the pipes to each node
-        self.values = [
-            0,  # Categories
-            4,  # Front End
-            3,  # Data Viz
-            1,  # API
-            4,  # Numerical
-            3,  # Domain
-            1,  # ETL
-            2,  # Storage
-            3,  # Operations
-        ]
+        # pipe width for individual libraries
         self.values.extend([1 for x in range(0, len(self.targets) - len(self.values))])
 
 
@@ -72,53 +61,45 @@ class SankeyDomain:
     Sankey diagram of domain competencies
     """
     def __init__(self):
+
         # --- labels ---
-        self.labels = [
-            "Domain",
+        main_type = ["Domain"]
+        categories = ['Solar Performance', 'C.A.D.', 'Statistics', 'Math', 'Machine Learning', 'Projects']
+        solar_performance = ['PVSyst', 'Plant Predict', 'SAM']
+        cad = ['AutoCAD', 'Solidworks']
+        stats = ['Error Metrics', 'Monte Carlo', 'Kolmogorov-Smirnov', 'Kernel Density Estimate']
+        math = ['Graph Theory', 'Ray Tracing']
+        ml = ['Regression', 'Clustering']
+        projects = ['Test Facilities', 'Utility Scale Projects', 'Residential Scale Projects']
 
-            # Categories
-            'Solar Performance', 'C.A.D.', 'Statistics', 'Math',
-            'Machine Learning', 'Projects',
+        self.labels = []
+        self.sources = []
+        self.values = []
+        label_types = [main_type, categories, solar_performance, cad, stats, math, ml, projects]
+        for i, label_list in enumerate(label_types):
 
-            'PVSyst', 'Plant Predict', 'SAM',                                               # Solar Performance Modeling
-            'AutoCAD', 'Solidworks',                                                                # CAD
-            'Error Metrics', 'Monte Carlo', 'Kolmogorov-Smirnov', 'Kernel Density Estimates',       # Stats
-            'Graph Theory', 'Ray Tracing',                                                          # Math
-            'Regression', 'K-Means Clustering', 'Spectral Clustering', 'Hierarchical Clustering',   # ML
-            'Test Facilities', 'Utility Scale Projects', 'Residential Scale Projects'               # Projects
-        ]
+            # add to labels list
+            self.labels.extend(label_list)
+
+            # choose sources for edge in sankey graph
+            j = i - 1 if i >= 2 else 0
+            self.sources.extend([j for x in range(0, len(label_list))])
+
+            # choose width of pipe in each node in category
+            if i == 1:
+                self.values.append(0)
+            elif i >= 2:
+                self.values.append(len(label_list))
+
 
         # --- colors ---
         self.color_link = ['#CCCCCC' for x in self.labels]
-
-        # --- sources ---
-        # Where the edges should start
-        self.sources = [
-            0,
-            0, 0, 0, 0, 0, 0,   # Categories
-            1, 1, 1,            # Solar Performance Modeling
-            2, 2,               # CAD
-            3, 3, 3, 3,         # Stats
-            4, 4,               # Math
-            5, 5, 5, 5,         # ML
-            6, 6, 6             # Projects
-        ]
 
         # --- targets ---
         # Where the edges should go
         self.targets = list(range(0, len(self.sources)))
 
         # --- values ---
-        # Width of the pipes to each node
-        self.values = [
-            0,
-            3,  # Solar Performance Modeling
-            2,  # CAD
-            4,  # Stats
-            1,  # Math
-            4,  # ML
-            3   # Projects
-        ]
         self.values.extend([1 for x in range(0, len(self.targets) - len(self.values))])
 
 
